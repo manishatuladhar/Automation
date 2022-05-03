@@ -1,5 +1,6 @@
 package com.company;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,11 +14,17 @@ public class Buttonclicks {
         WebDriver driver = new ChromeDriver();
         driver.get("https://webdriveruniversity.com/Click-Buttons/index.html");
 
-        WebElement webelementclick = driver.findElement(By.xpath("/html/body"));
-        webelementclick.sendKeys("");
+        WebElement button = driver.findElement(By.xpath("//*[@id=\"button1\"]"));
+        button.click();
 
-        WebElement click = driver.findElement(By.xpath("//*[@id=\"button1\"]/p"));
-        webelementclick.sendKeys("");
+        WebElement button2 = driver.findElement(By.cssSelector("span#button2"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("button2.click();");
+
+
+
+
+
 
 
 
